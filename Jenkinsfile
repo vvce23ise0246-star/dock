@@ -42,6 +42,11 @@ pipeline {
                 }
             }
         }
+        stage('Clone Repository') {
+    steps {
+        git branch: 'main', url: 'https://github.com/vvce23ise0246-star/dock.git'
+    }
+}
     }
 
     post {
