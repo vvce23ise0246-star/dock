@@ -7,14 +7,11 @@ pipeline {
 
     stages {
         // Stage 1: Build (This is already working for you now!)
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Using the plugin syntax you installed
-                    docker.build("${DOCKER_IMAGE}:latest")
-                }
-            }
-        }
+       stage('Build Docker Image') {
+    steps {
+        bat 'docker build -t myimage .'
+    }
+}
 
         // Stage 2: Login (Fixed for Windows)
         stage('Login to Docker Hub') {
